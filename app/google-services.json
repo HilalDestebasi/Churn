@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "866695801790",
+    "firebase_url": "https://churn-1650317481764-default-rtdb.firebaseio.com",
+    "project_id": "churn-1650317481764",
+    "storage_bucket": "churn-1650317481764.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866695801790:android:100e18cb4fb1d278c7a7ef",
+        "android_client_info": {
+          "package_name": "com.example.churn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866695801790-1v8rk728sfce23o3kot8stqecj3q6h00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN_iBY7kx2tPg2HWitwAHa0u0yDwTx5Z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866695801790-1v8rk728sfce23o3kot8stqecj3q6h00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
