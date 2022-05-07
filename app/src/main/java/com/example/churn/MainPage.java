@@ -49,7 +49,7 @@ public class MainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().setTitle(Html.fromHtml("<font color=\"#FFC854\">" + "MY CUSTOMERS" + "</font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color=\"#000000\">" + "MY CUSTOMERS" + "</font>"));
 
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen

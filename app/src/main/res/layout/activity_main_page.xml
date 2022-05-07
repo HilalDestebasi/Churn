@@ -26,8 +26,8 @@
             android:layout_height="wrap_content"
 
             android:id="@+id/bottomNav"
-            app:itemTextColor="@color/support_color_orange"
-            app:itemIconTint="@color/support_color_orange"
+            app:itemTextColor="@color/black"
+            app:itemIconTint="@color/black"
             android:layout_alignParentBottom="true"
             android:background="@color/main_color"
             app:menu="@menu/menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
@@ -40,7 +40,7 @@
         android:layout_marginBottom="70dp"
         android:onClick="insertFileClick"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/ic_insert_file"
+        android:src="@drawable/add"
         android:background="@color/support_color_orange"
         android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>
