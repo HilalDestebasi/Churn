@@ -73,7 +73,7 @@ public class signUp extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Users");
         System.out.println(email);
         User u=new User(name,email,password,company,address,phone);
-        ////phone kısmı bir id ye göre olmalı
+        ////TODO : phone yerine id falan olmalı
         myRef.child(phone).push().setValue(u);
 
     }
