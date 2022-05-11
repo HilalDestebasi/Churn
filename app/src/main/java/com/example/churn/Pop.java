@@ -1,12 +1,14 @@
 package com.example.churn;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -29,6 +31,13 @@ public class Pop extends Activity {
         int height =dm.heightPixels;
         getWindow().setLayout((int)(width*.9),(int)(height*.6));
     }
+    ArrayList<String> listItems=new ArrayList<String>();
+
+    //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
+    ArrayAdapter<String> adapter;
+
+    //RECORDING HOW MANY TIMES THE BUTTON HAS BEEN CLICKED
+    int clickCounter=0;
 
     @Nullable
 
@@ -48,8 +57,12 @@ public class Pop extends Activity {
         EditText estimatedSalary=(EditText) findViewById(R.id.estimatedSalary);
         EditText exited=(EditText) findViewById(R.id.exited);
         // Add the pet to our listview
-        Model lvi = new Model(customerId.getText().toString(),customerSurname.getText().toString());
+        listItems.add(customerId.getText().toString()+"\t"+customerSurname.getText().toString());
+        adapter.notifyDataSetChanged();
+
+        list.setVisibility(View.VISIBLE);
 
     }
+
 }
 

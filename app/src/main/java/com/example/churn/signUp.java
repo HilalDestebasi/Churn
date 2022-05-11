@@ -32,24 +32,32 @@ public class signUp extends AppCompatActivity {
     public void signUpClick(View v) {
 
         EditText name=(EditText) findViewById(R.id.name);
-        EditText email=(EditText) findViewById(R.id.email);
+        EditText emailValidate=(EditText) findViewById(R.id.email);
         EditText password=(EditText) findViewById(R.id.password);
         EditText passwordAgain=(EditText) findViewById(R.id.password_again);
         TextView errorMessage=(TextView) findViewById(R.id.error_message);
+        String email = emailValidate.getText().toString().trim();
+
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
         if(!passwordAgain.getText().toString().equals(password.getText().toString())
-                ||email.getText().toString().length()==0
+                ||emailValidate.getText().toString().length()==0
                 ||name.getText().toString().length()==0){
             errorMessage.setText("!!Please Enter Correctly!!");
             errorMessage.setVisibility(View.VISIBLE);
-        }else{
+        }
+        else if(!email.matches(emailPattern)) {
+            Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+        }else
+        {
             EditText company=(EditText) findViewById(R.id.company);
             EditText address=(EditText) findViewById(R.id.address);
             EditText phone  =(EditText) findViewById(R.id.phone);
-            saveUser(name.getText().toString(),email.getText().toString(),password.getText().toString(),
+            saveUser(name.getText().toString(),emailValidate.getText().toString(),password.getText().toString(),
                     company.getText().toString(), address.getText().toString(),phone.getText().toString());
-            Toast.makeText(signUp.this,"User Added to Firebase",Toast.LENGTH_LONG).show();
 
-            Intent i=new Intent(this,MainActivity.class);
+            Toast.makeText(signUp.this,"User Added to Firebase",Toast.LENGTH_LONG).show();
+            Intent i=new Intent(this,MainPage.class);
             startActivity(i);
 
         }
@@ -63,9 +71,10 @@ public class signUp extends AppCompatActivity {
         Toast.makeText(signUp.this,"Firebase Connection is Success",Toast.LENGTH_LONG).show();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Users");
-
+        System.out.println(email);
         User u=new User(name,email,password,company,address,phone);
-        myRef.child("Users").push().setValue(u);
+        ////phone kısmı bir id ye göre olmalı
+        myRef.child(phone).push().setValue(u);
 
     }
 }
