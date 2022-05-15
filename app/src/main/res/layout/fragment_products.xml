@@ -1,16 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_color"
     tools:context=".Products">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="products" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-</RelativeLayout>
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_color"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/aboutAppFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:text="      In the beginning, companies like to gain new customers, then they do not want to lose the customers they have gained. They can consider it permanent by offering additional services to customers they do not want to lose." />
+
+        <TextView
+            android:id="@+id/aboutAppSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:text="What is the churn model?"
+            android:textStyle="bold|italic"></TextView>
+
+        <TextView
+            android:id="@+id/aboutThird"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:text="      It's a predictive model that calculates the likelihood of customers leaving at the individual level. It tells us how likely we are to lose a customer in the future for each customer at any given time.\n\n
+
+       It's a binary classifier that classifies customers into two categories: those who depart and those who don't. It will usually offer us the chance that the client belongs to one of the two groups in addition to allocating them to one of the two groups.
+\n\n        It's vital to remember that this is the likelihood of being one of the clients who leave. As a result, it is the propensity to depart rather than the likelihood of leaving. A churn model, on the other hand, can be used to estimate the probability."></TextView>
+
+        <TextView
+            android:id="@+id/aboutAppFourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:text="What is it useful for?"
+            android:textStyle="bold|italic"></TextView>
+
+        <TextView
+            android:id="@+id/aboutAppFifth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:text="      We can better target our rescue efforts if we know which clients are most likely to leave. For example, we may send out a marketing campaign to these customers, reminding them that they haven't purchased from us in a while and possibly offering them a discount.\n\n
+        We may utilize the churn model to establish the greatest benefit price that is still worthwhile, in addition to knowing which clients to target. For example, if we know that a certain client's projected likelihood of departing is 10% and their annual revenue is $100, the expected value of future annual revenue is $90. As a result, an offer that reduces the likelihood of leaving by 5% is worthwhile for this client, as long as it does not cost more than $5."></TextView>
+
+        <TextView
+            android:id="@+id/refLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:autoLink="web"
+            android:text="@string/link"
+            android:clickable="true"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textStyle="italic"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:text="\n\n\n\n"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textStyle="italic"></TextView>
+
+
+    </LinearLayout>
+</ScrollView>

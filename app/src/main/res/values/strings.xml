@@ -14,6 +14,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="link"><a href="https://towardsdatascience.com/churn-prediction-model-8a3f669cc760#:~:text=What%20is%20the%20churn%20model,losing%20them%20in%20the%20future.">Reference</a></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

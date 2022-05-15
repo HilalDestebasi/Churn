@@ -1,22 +1,41 @@
 package com.example.churn;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.display.DisplayManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Pop extends Activity {
@@ -31,18 +50,13 @@ public class Pop extends Activity {
         int height =dm.heightPixels;
         getWindow().setLayout((int)(width*.9),(int)(height*.6));
     }
-    ArrayList<String> listItems=new ArrayList<String>();
+    public static String deneme="";
 
-    //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
-    ArrayAdapter<String> adapter;
 
-    //RECORDING HOW MANY TIMES THE BUTTON HAS BEEN CLICKED
-    int clickCounter=0;
-
+    @SuppressLint("ResourceType")
     @Nullable
 
-    public void addCustomerClick(View view) {
-        ListView list=(ListView) findViewById(R.id.list);
+    public void addCustomerClick(View view) throws IOException {
         EditText customerId=(EditText) findViewById(R.id.customerID);
         EditText customerSurname=(EditText) findViewById(R.id.customerSurname);
         EditText creditScore=(EditText) findViewById(R.id.creditScore);
@@ -56,13 +70,15 @@ public class Pop extends Activity {
         EditText isActiveMember=(EditText) findViewById(R.id.isActiveMember);
         EditText estimatedSalary=(EditText) findViewById(R.id.estimatedSalary);
         EditText exited=(EditText) findViewById(R.id.exited);
-        // Add the pet to our listview
-        listItems.add(customerId.getText().toString()+"\t"+customerSurname.getText().toString());
-        adapter.notifyDataSetChanged();
+        deneme=customerSurname.getText().toString();
 
-        list.setVisibility(View.VISIBLE);
+        Intent in = new Intent(Pop.this, MainPage.class);
 
+        startActivity(in);
+        setResult(Activity.RESULT_OK);
     }
-
+    public String getDeneme(){
+        return deneme;
+    }
 }
 
