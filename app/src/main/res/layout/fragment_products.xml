@@ -46,7 +46,6 @@
             android:paddingTop="10dp"
             android:paddingRight="20dp"
             android:text="      It's a predictive model that calculates the likelihood of customers leaving at the individual level. It tells us how likely we are to lose a customer in the future for each customer at any given time.\n\n
-
        It's a binary classifier that classifies customers into two categories: those who depart and those who don't. It will usually offer us the chance that the client belongs to one of the two groups in addition to allocating them to one of the two groups.
 \n\n        It's vital to remember that this is the likelihood of being one of the clients who leave. As a result, it is the propensity to depart rather than the likelihood of leaving. A churn model, on the other hand, can be used to estimate the probability."></TextView>
 
@@ -80,12 +79,21 @@
             android:paddingStart="20dp"
             android:paddingTop="10dp"
             android:paddingRight="20dp"
-            android:autoLink="web"
-            android:text="@string/link"
+            android:text="Reference"
             android:clickable="true"
             android:textColor="@color/black"
             android:textColorLink="@color/black"
             android:textStyle="italic"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:text="https://medium.com/towards-data-science/churn-prediction-model-8a3f669cc760"
+            android:textColor="@color/black"
+            ></TextView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

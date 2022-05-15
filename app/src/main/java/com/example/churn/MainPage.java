@@ -25,6 +25,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +54,7 @@ import java.util.Scanner;
 public class MainPage extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+
     public static ArrayList<String> arrayL=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +68,16 @@ public class MainPage extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new ItemFragment()).commit();
+        LinearLayout myRoot = (LinearLayout) findViewById(R.id.list);
+        ScrollView sv=(ScrollView) findViewById(R.id.scrollList);
+        sv.setVisibility(View.INVISIBLE);
+        myRoot.setVisibility(View.INVISIBLE);
         Pop p=new Pop();
+
         if(!p.getDeneme().equals("")){
+            sv.setVisibility(View.VISIBLE);
+            myRoot.setVisibility(View.VISIBLE);
+
             setListItems();
         }
 
@@ -83,11 +93,12 @@ public class MainPage extends AppCompatActivity {
         LinearLayout a = new LinearLayout(this);
         a.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        TextView[] pairs=new TextView[4];
+        TextView[] pairs=new TextView[arrayL.size()];
+
         for(int l=0; l<arrayL.size(); l++)
         {
             pairs[l] = new TextView(this);
-            pairs[l].setTextSize(15);
+            pairs[l].setTextSize(20);
             pairs[l].setPadding(20,10,10,5);
             pairs[l].setLayoutParams(lp);
             pairs[l].setId(l);
@@ -110,18 +121,23 @@ public class MainPage extends AppCompatActivity {
 
             Fragment fragment = null;
             LinearLayout myRoot = (LinearLayout) findViewById(R.id.list);
+            ScrollView sv=(ScrollView) findViewById(R.id.scrollList);
+
             switch (item.getItemId()) {
                 case R.id.results:
                     fragment = new Results();
                     myRoot.setVisibility(View.INVISIBLE);
+                    sv.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.aboutApplication:
                     fragment = new Products();
                     myRoot.setVisibility(View.INVISIBLE);
+                    sv.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.customers:
                     fragment = new ItemFragment();
                     myRoot.setVisibility(View.VISIBLE);
+                    sv.setVisibility(View.VISIBLE);
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
