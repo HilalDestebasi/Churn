@@ -13,21 +13,20 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.Churn"
         android:usesCleartextTraffic="true">
-
         <activity
             android:name=".MainPage"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".signUp"
             android:exported="false" />
         <activity
             android:name=".Register"
-            android:exported="false"/>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Pop"
             android:theme="@style/AppTheme.CustoTheme">
