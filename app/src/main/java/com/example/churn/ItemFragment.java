@@ -30,7 +30,10 @@ public class ItemFragment extends Fragment {
      * fragment (e.g. upon screen orientation changes).
      */
     public ItemFragment() {
+
     }
+
+
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")

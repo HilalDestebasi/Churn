@@ -75,8 +75,6 @@ public class Pop extends Activity {
         EditText hasCreditCard=(EditText) findViewById(R.id.hasCrCard);
         EditText isActiveMember=(EditText) findViewById(R.id.isActiveMember);
         EditText estimatedSalary=(EditText) findViewById(R.id.estimatedSalary);
-        EditText exited=(EditText) findViewById(R.id.exited);
-
 
         arrayList.add(customerId.getText().toString());
         arrayList.add(customerSurname.getText().toString());
@@ -90,7 +88,6 @@ public class Pop extends Activity {
         arrayList.add(hasCreditCard.getText().toString());
         arrayList.add(isActiveMember.getText().toString());
         arrayList.add(estimatedSalary.getText().toString());
-        arrayList.add(exited.getText().toString());
         StringBuffer sb = new StringBuffer();
         sb.append("1,");
         for (int i = 0; i < arrayList.size(); i++) {
@@ -111,9 +108,9 @@ public class Pop extends Activity {
 
         //Log.d("exited", service.sendExited());
         deneme=customerSurname.getText().toString();
-
         startActivity(in);
         setResult(Activity.RESULT_OK);
+
     }
     public String getDeneme(){
         return deneme;

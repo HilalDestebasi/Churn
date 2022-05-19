@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -17,13 +18,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -74,12 +78,13 @@ public class MainPage extends AppCompatActivity {
         myRoot.setVisibility(View.INVISIBLE);
         Pop p=new Pop();
 
+
         if(!p.getDeneme().equals("")){
             sv.setVisibility(View.VISIBLE);
             myRoot.setVisibility(View.VISIBLE);
-
             setListItems();
         }
+
 
     }
 
@@ -105,6 +110,7 @@ public class MainPage extends AppCompatActivity {
             pairs[l].setText((l + 1) + " : "+arrayL.get(l));
             myRoot.addView(pairs[l]);
         }
+
 
     }
 
@@ -140,6 +146,7 @@ public class MainPage extends AppCompatActivity {
                     sv.setVisibility(View.VISIBLE);
                     break;
             }
+
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
             return false;
         }

@@ -22,6 +22,7 @@ public class Services implements IService{
     String surname;
     String exited;
     List<ResponseModel> results;
+    Results r=new Results();
     public String getSurname() {
         return surname;
     }
@@ -52,7 +53,7 @@ public class Services implements IService{
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
 
                 ResponseModel responseFromAPI = response.body();
-// TODO:
+
                 Log.d("response: ",responseFromAPI.Exited);
                 setExited(responseFromAPI.Exited);
                 setSurname(responseFromAPI.Surname);
@@ -61,8 +62,13 @@ public class Services implements IService{
 
                 String responseString = "Response Code : " + response.code();
                 Log.d("lol",responseString);
-
-
+                if(responseFromAPI.Exited.equals("1")){
+                    Log.d("True: "," "+r.getTr());
+                    r.setTr(r.getTr()+1);
+                }else{
+                    Log.d("False: "," "+r.getFl());
+                    r.setFl(r.getFl()+1);
+                }
             }
 
             @Override
