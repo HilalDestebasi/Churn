@@ -27,8 +27,8 @@ public class Results extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    public static int tr=1;
-    public static int fl=1;
+    public static int tr=0;
+    public static int fl=0;
 
     public int getTr() {
         return tr;
@@ -76,6 +76,7 @@ public class Results extends Fragment {
         ProgressBar progressBar = (ProgressBar) getView().findViewById(R.id.progressBar);
         progressBar.setProgress(num);
         TextView tpr=(TextView) getView().findViewById(R.id.prText);
+        System.out.println(num);
         if(num>100){
             tpr.setText("%100");
         }else{
@@ -86,7 +87,23 @@ public class Results extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        setSettings(fl/tr*100);
+        if (fl == 0 && tr == 0) {
+            setSettings(0);
+        }else if(fl!= 0 && tr==0){
+            setSettings(100);
+        } else if (fl == 0 && tr != 0) {
+            setSettings(0);
+        }else{
+            System.out.println("setsettings");
+            double fld = new Double(fl);
+            double trd = new Double(tr);
+            System.out.println(fld);
+            System.out.println(fld+trd);
+            double oran2 = (fld/(fld+trd));
+            System.out.println(oran2);
+            int oran = (int) (oran2 * 100);
+            setSettings(oran);
+        }
     }
 
 
